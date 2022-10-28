@@ -1,25 +1,25 @@
 ﻿ //[FixedWidthFile(Arguments)]
-    //  Mark class as Fixed Width File.
-    //Arguments: na
-    //Properties:
-    //  PadFile [bool](true): Set whether or not to pad each line the total length of all Field Chars.
-    [FixedWidthFile(PadFile = true)]
-    public class Fw_Test
-    {
-        //[FixedWidthField(Arguments, Properties: [Length, Trim])]
-        //  Mark properties as Fixed Width Fields.
-        //Arguments:
-        //  HeaderName [string](null): If set it will be added to the context.FieldHeaders and the parsed class array.
-        //Properties: 
-        //  Length [int](null): The fixed length of the field.
-        //  - If not set this field will be ignored durring import.
-        //  Trim [bool](true): Trim white space before and after field value.
-        //  Repeat [int](null): Repeat this field x times
+    //  Mark class as Fixed Width File.   
+    //Arguments: na   
+    //Properties:   
+    //  PadFile [bool](true): Set whether or not to pad each line the total length of all Field Chars.   
+    [FixedWidthFile(PadFile = true)]   
+    public class Fw_Test   
+    {   
+        //[FixedWidthField(Arguments, Properties: [Length, Trim])]   
+        //  Mark properties as Fixed Width Fields.   
+        //Arguments:   
+        //  HeaderName [string](null): If set it will be added to the context.FieldHeaders and the parsed class array.   
+        //Properties:    
+        //  Length [int](null): The fixed length of the field.   
+        //  - If not set this field will be ignored durring import.   
+        //  Trim [bool](true): Trim white space before and after field value.   
+        //  Repeat [int](null): Repeat this field x times   
+   
+        [FixedWidthField("Field One", Length = 15)]   
+        public string One { get; set; }   
 
-        [FixedWidthField("Field One", Length = 15)]
-        public string One { get; set; }
-
-        /// <summary>
+        /// <summary>   
         //You can group repeated sets of fields together using a secondary class.
         //If you define headers in the secondary class it creates "bucketed" groups (A_1|B_1, A_2|B_2)
         //Otherwise define a secondary field and collect the values you need from the array
